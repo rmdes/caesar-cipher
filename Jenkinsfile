@@ -11,11 +11,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test the test'
+		gradle tasks --all
             }
         }
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo 'Push the Jar artifact to Github'
+                echo 'Build the Jar artifact'
+		gradle build
             }
         }
     }
