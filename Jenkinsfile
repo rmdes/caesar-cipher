@@ -22,11 +22,7 @@ pipeline {
         }
 	stage ('Release to Github') {
 	    steps {
-	        sh 'curl -H "Authorization: token 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" \
-     -H "Accept: application/vnd.github.manifold-preview" \
-     -H "Content-Type: application/java" \
-     --data-binary @build/libs/caesars-cipher.jar \
-     "https://uploads.github.com/repos/rmdes/caesar-cipher/releases/assets?name=1.0.0-caesars-cipher.jar"'
+	        sh 'curl -v -i -X POST build/libs/caesars-cipher.jar -H "Content-Type:application/vnd.github.v3+json" -H "Authorization: token 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" https://api.github.com/repos/rmdes/caesar-cipher/releases -d '{"tag_name":"Caesar-Cipher.jar"}''
            }
 }
         }
