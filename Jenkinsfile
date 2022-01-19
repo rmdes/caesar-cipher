@@ -26,7 +26,7 @@ pipeline {
      -H "Accept: application/vnd.github.manifold-preview" \
      -H "Content-Type: application/java" \
      --data-binary @build/libs/caesars-cipher.jar \
-     "https://uploads.github.com/repos/hubot/singularity/releases/123/assets?name=1.0.0-caesars-cipher.jar"'
+     "https://uploads.github.com/repos/rmdes/caesar-cipher/releases/assets?name=1.0.0-caesars-cipher.jar"'
            }
 }
         }
