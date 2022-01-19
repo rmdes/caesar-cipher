@@ -22,7 +22,11 @@ pipeline {
         }
 	stage ('Release to Github') {
 	    steps {
-	        sh 'curl '
+	        sh 'curl -H "Authorization: token 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" \
+     -H "Accept: application/vnd.github.manifold-preview" \
+     -H "Content-Type: application/java" \
+     --data-binary @build/libs/caesars-cipher.jar \
+     "https://uploads.github.com/repos/hubot/singularity/releases/123/assets?name=1.0.0-caesars-cipher.jar"'
            }
 }
         }
