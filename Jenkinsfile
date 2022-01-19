@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('GitHub Auth') {
             steps {
@@ -19,6 +19,11 @@ pipeline {
                 echo 'Build the Jar artifact'
 		sh './gradlew clean build'
             }
+	stage ('Release to Github') {
+	    steps {
+	        sh 'curl '
+           }
+
         }
     }
 }
