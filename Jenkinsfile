@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Build') {
+        stage('GitHub Auth') {
             steps {
                 echo 'Building..'
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'e7ff015a-07d8-4a56-ae61-9c58fa2ad826', url: 'git@github.com:rmdes/caesar-cipher.git']]])
