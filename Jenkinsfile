@@ -19,11 +19,12 @@ pipeline {
                 echo 'Build the Jar artifact'
 		sh './gradlew clean build'
             }
+        }
 	stage ('Release to Github') {
 	    steps {
 	        sh 'curl '
            }
-
+}
         }
     }
-}
+
