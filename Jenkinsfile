@@ -22,7 +22,7 @@ pipeline {
         }
 	stage ('Release to Github') {
 	    steps {
-	        sh 'curl -v -i -X POST -H "Content-Type:application/vnd.github.v3+json" -H "Authorization: token TOKEN" https://api.github.com/repos/rmdes/caesar-cipher/releases -d '{"tag_name":"Caesar-Cipher.jar"}''
+	        sh ''
            }
 }
         }
