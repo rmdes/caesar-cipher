@@ -23,7 +23,7 @@ pipeline {
 	stage ('Release to Github') {
 	    steps {
 	        sh 'gh release create'
-		sh 'gh release upload 0.1.1 caesar-cipher-0.1.1.jar"
+		sh 'gh release upload 0.1.1 caesar-cipher-0.1.1.jar'
            }
 }
         }
