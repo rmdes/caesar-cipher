@@ -17,12 +17,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the Jar artifact'
-		sh './gradlew clean build'
+		sh './gradlew build'
             }
         }
 	stage ('Release to Github') {
 	    steps {
-	        sh ''
+	        sh 'gh release create'
+		sh 'gh release upload 0.1.1 caesar-cipher-0.1.1.jar"
            }
 }
         }
