@@ -16,8 +16,8 @@ plugins {
 
 scmVersion {
     tag { // Resulting tag will by x.y.z
-        prefix = 'v'
-        versionSeparator = '-'
+        prefix = ''
+        versionSeparator = ''
     }
 
     // Incrementing policy
