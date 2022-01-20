@@ -20,6 +20,22 @@ scmVersion {
         versionSeparator = '-'
     }
 
+    // Incrementing policy
+    versionIncrementer 'incrementMinor'  //default
+    branchVersionIncrementer = [
+       'master': 'incrementPrerelease',
+       'release/.*': 'incrementPrerelease',
+       'hotfix/.*': 'incrementPrerelease'
+    ]
+ 
+    // Decorators
+    versionCreator 'simple'
+    branchVersionCreator = [
+       'feature/.*': 'versionWithBranch'
+    ]
+ 
+    localOnly = false  //no pushing to remote
+
 }
 
 
@@ -55,8 +71,9 @@ dependencies {
 }
 
 test {
+	maxParallelForks 3
 	useJUnitPlatform()
-    testLogging {
+    	testLogging {
 		events "PASSED", "SKIPPED", "FAILED"
 	}
 }
