@@ -23,7 +23,7 @@ scmVersion {
     // Incrementing policy
     versionIncrementer 'incrementMinor'  //default
     branchVersionIncrementer = [
-       'master': 'incrementPrerelease',
+       'main': 'incrementPrerelease',
        'release/.*': 'incrementPrerelease',
        'hotfix/.*': 'incrementPrerelease'
     ]
@@ -45,7 +45,7 @@ jar {
     archiveBaseName = 'caesar-cipher'
     archiveVersion =  version
     manifest {
-        attributes 'Implementation-Title': 'Caesar cipher',
+        attributes 'Implementation-Title': 'Caesar Cipher',
                    'Implementation-Version': archiveVersion,
                    'Main-Class': 'caesars.cipher.Main'
     }
